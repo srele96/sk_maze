@@ -6,7 +6,7 @@ SET in_file=%1.cpp
 
 ECHO --------
 ECHO Creating %out_dir% directory
-mkdir %out_dir%
+MKDIR %out_dir%
 
 ECHO Compiling %in_file% to %output%
 clang++ -Wall -Wextra -Werror -Wshadow -Weffc++ -Wnon-virtual-dtor -pedantic -std=c++17 %in_file% -o %out_file%
