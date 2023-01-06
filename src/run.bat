@@ -1,12 +1,16 @@
 @ECHO OFF
 
-ECHO --------
-ECHO Creating ..\build directory
-mkdir ..\build
+SET out_dir=..\build
+SET out_file=%out_dir%\%1
+SET in_file=%1.cpp
 
-ECHO Compiling %1.cpp to ..\build\%1
-clang++ -Wall -Wextra -Werror -Wshadow -Weffc++ -Wnon-virtual-dtor -pedantic -std=c++17 %1.cpp -o ..\build\%1
-
-ECHO Running ..\build\%1
 ECHO --------
-..\build\%1
+ECHO Creating %out_dir% directory
+mkdir %out_dir%
+
+ECHO Compiling %in_file% to %output%
+clang++ -Wall -Wextra -Werror -Wshadow -Weffc++ -Wnon-virtual-dtor -pedantic -std=c++17 %in_file% -o %out_file%
+
+ECHO Running %out_file%
+ECHO --------
+%out_file%
