@@ -8,7 +8,7 @@ ECHO --------
 ECHO Creating %out_dir% directory
 MKDIR %out_dir%
 
-ECHO Compiling %in_file% to %output%
+ECHO Compiling %in_file% to %out_file%
 clang++ -Wall -Wextra -Werror -Wshadow -Weffc++ -Wnon-virtual-dtor -pedantic -std=c++17 %in_file% -o %out_file%
 
 ECHO Running %out_file%
